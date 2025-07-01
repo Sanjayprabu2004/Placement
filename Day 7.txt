@@ -1,0 +1,194 @@
+Day 7
+
+Java Abstract Class and Abstract Methods:
+
+the abstract in the java cannot be initiated ( we cannot create the object of abstract classes)
+we can use keyword to declare an abstract class.
+
+normal cannot able to access the abstract method.
+
+
+1.Abstract Class:
+
+abstract class MotorBike {
+  abstract void brake();
+}
+
+class SportsBike extends MotorBike {
+    
+  // implementation of abstract method
+  public void brake() {
+    System.out.println("SportsBike Brake");
+  }
+}
+
+class MountainBike extends MotorBike {
+    
+  // implementation of abstract method
+  public void brake() {
+    System.out.println("MountainBike Brake");
+  }
+}
+
+class Main {
+  public static void main(String[] args) {
+    MountainBike m1 = new MountainBike();
+    m1.brake();
+    SportsBike s1 = new SportsBike();
+    s1.brake();
+  }
+}
+
+
+
+2.Interface:
+
+interface Fun
+{
+    public void hii();
+     public void hello();
+    
+}
+class person implement Fun{
+    public void hii()
+    {
+        System.out.print("hii");
+        
+    }
+        public void hello()
+    {
+        System.out.print("hello");
+        
+    }
+}
+
+
+
+Where to use Implement and Extend:
+
+1.class- class(extend)
+2.interface-class(implement)
+3.interface -interface(extend)
+
+
+
+
+import java.util.*;
+class Main
+{
+  
+  	public static void main (String[] args) {
+       Scanner sc = new Scanner(System.in);
+       int n  = sc.nextInt();
+       int d , sum = 0; 
+       while(n>=10)
+       {
+           sum = 0;
+           while(n>0)
+           {
+               d = n%10 ;
+               n = n/10;
+               sum = sum + d;
+           }
+           n = sum;
+       }
+       System.out.print(n);
+       
+    }
+}
+
+
+
+
+
+
+// 123  = 6 
+// 1234567  = 28  = 10  = 1 
+// 555  = 15 = 6 
+
+
+
+
+
+// 123  = 1 2 3  = 6 
+// 555  = 15  = 6 
+
+// 8 
+
+// step1 : num 
+// step2 : check  or not single  n  
+// step3 : add 
+// 555 = 15  = 6 
+
+
+
+
+
+
+// n = 6   while(n>=10)
+
+// while(n>0)
+// d = n %10   1 
+// n = n / 10 
+// sum  = sum + d  0
+
+// n = sum 
+// sum = 0
+
+
+
+
+
+Hackerrank Marana Coder :
+
+1. ATM Machine:
+
+import java.util.*;
+public class Solution {
+public static void main(String[] args) {
+Scanner sc = new Scanner(System.in);
+int amount = sc.nextInt();
+int[] note = {500, 100, 50, 20, 10, 5, 2, 1};
+System.out.println("Total number of notes:");
+for (int i = 0; i < note.length; i++) {
+int count = amount / note[i];
+System.out.println(note[i] + " : " + count);
+amount = amount % note[i];
+}
+}
+}
+
+2.
+
+import java.util.*;
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String date = sc.nextLine().trim();
+        String[] parts = date.split("/");
+        int day = Integer.parseInt(parts[0].trim());
+        int month = Integer.parseInt(parts[1].trim());
+        int year = Integer.parseInt(parts[2].trim());
+        int[] daysInMonth = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+        if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) {
+            daysInMonth[1] = 29;
+        }
+        int totalDays = 0;
+        for (int i = 0; i < month - 1; i++) {
+            totalDays += daysInMonth[i];
+        }
+        totalDays += day;
+        System.out.println("Completed days:" + totalDays);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
