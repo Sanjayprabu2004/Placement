@@ -1,0 +1,272 @@
+Java Array list:
+
+
+
+1.CARS
+
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        ArrayList<String>cars= new ArrayList<String>();
+        Scanner sc= new Scanner(System.in);
+        for( int i=0;i<3;i++)
+        {
+            String a = sc.next();
+        cars.add(a);
+    }
+    
+    for(int i=0;i<3;i++)
+    {
+        System.out.printLN(cars.get(i) +"");
+    }
+}
+}
+
+
+Keywords:
+
+ArraysList Size
+sort an ArrayList
+
+
+
+
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        ArrayList<String>cars= new ArrayList<String>();
+        Scanner sc= new Scanner(System.in);
+        int op;
+        while(true)
+    {
+        System.out.printLN("1.Addn2.del#n3.sor);
+        op = sc.nextInt();
+        String name;
+        if(op==1)
+        {
+            name= sc.next();
+            person.add(name);
+        }
+    }
+}
+}
+
+
+import java.util.*;
+public class Main {
+  public static void main(String[] args) {
+    ArrayList<String> person = new ArrayList<String>();
+     Scanner sc = new Scanner(System.in);
+    int op;
+    
+    while(true)
+    {
+        System.out.print("1.Add\n2.del\n3.sort\n4.Diplay\n5.exit\n");
+        op = sc.nextInt();
+        String name;
+        if(op==1)
+        {
+            name = sc.next();
+            person.add(name);
+        }
+        else if(op==2)
+        {
+            name = sc.next();
+            person.remove(name);
+        }
+         else if(op==3)
+        {
+            Collections.sort(person);
+        }
+         else if(op==4)
+        {
+            System.out.println(person);
+        }
+         else if(op==5)
+        {
+           System.out.println("thank you");
+           return ;
+        }
+        
+        
+        
+        System.out.print("\n--------------------\n");
+        
+        
+    }
+   
+    
+  }
+  
+   
+}
+
+https://www.w3schools.com/JAVA/java_list.asp
+Array list 
+add()	Adds an element to the end of the list
+get()	Returns the element at the specified position
+set()	Replaces the element at the specified position
+remove()	Removes the element at the specified position
+size()	Returns the number of elements in the list
+
+
+Linked list 
+addFirst()	Adds an element to the beginning of the list	
+addLast()	Add an element to the end of the list	
+removeFirst()	Remove an element from the beginning of the list	
+removeLast()	Remove an element from the end of the list	
+getFirst()	Get the element at the beginning of the list	
+getLast()	Get the element at the end of the list	
+
+
+
+Append :
+
+import java.util.*;
+public class Main
+{
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String s = sc.nextLine();
+        char ch = sc.next().charAt(0);
+
+        String result = "";
+        for(int i = 0; i < s.length(); i++) {
+            if(s.charAt(i) != ch) {
+                result += s.charAt(i);
+            }
+        }
+
+        System.out.println(result);
+    }
+}
+
+OUTPUT:
+
+result
+u
+reslt
+
+
+
+
+Hackerrank:
+
+Fundamentals of Programming  Control Statements -
+1. Print Prime Numbers in a range
+
+
+
+import java.util.*;
+public class PrimeNumbers {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        if (n < 2) {
+            return;
+        }
+        boolean[] isPrime = new boolean[n + 1];
+        Arrays.fill(isPrime, true);
+        isPrime[0] = isPrime[1] = false;
+        for (int i = 2; i * i <= n; i++) {
+            if (isPrime[i]) {
+                for (int j = i * i; j <= n; j += i) {
+                    isPrime[j] = false;
+                }
+            }
+        }
+        for (int i = 2; i <= n; i++) {
+            if (isPrime[i]) {
+                System.out.print(i + " ");
+            }
+        }
+    }
+}
+
+
+2.Control Statements - Special number
+
+import java.util.*;
+public class SpecialNumbers {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int m = sc.nextInt();
+        int n = sc.nextInt();
+        for (int num = m; num <= n; num++) {
+            if (num >= 10 && num <= 99) {
+                int tens = num / 10;
+                int ones = num % 10;
+                int sum = tens + ones;
+                int product = tens * ones;
+                if (sum + product == num) {
+                    System.out.println(num);
+                }
+            }
+        }
+    }
+}
+
+
+
+3.Control Statements - Sum of digit till single digit:
+
+
+import java.util.*;
+public class SumOfDigitsUntilSingleDigit {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        long num = sc.nextLong();
+        while (num >= 10) { 
+            long sum = 0;
+            while (num > 0) {
+                sum += num % 10;
+                num /= 10;
+            }
+            num = sum;
+        }
+        System.out.println(num);
+    }
+}
+
+
+
+
+4.Control Statements - Amoeba Multiplication:
+
+import java.util.*;
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int month = sc.nextInt();
+        int a = 0, b = 1, fib = 0;
+        if (month == 1) {
+            System.out.println(0);
+        } else if (month == 2) {
+            System.out.println(1);
+        } else {
+            for (int i = 3; i <= month; i++) {
+                fib = a + b;
+                a = b;
+                b = fib;
+            }
+            System.out.println(fib);
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
